@@ -2,6 +2,12 @@ body {
 	margin: 10px;
 }
 
-h1 a, h2 a {
-    color: #4286f4
+button a {
+	color: white;
 }
+
+button a:hover {
+	color: white;
+	text-decoration: none;
+}
+
