@@ -3,10 +3,6 @@ body {
 	color: #000;
 }
 
-a {
-	color: #000;
-}
-
 button a {
 	color: white;
 }
@@ -16,3 +12,21 @@ button a:hover {
 	text-decoration: none;
 }
 
+a {
+	color: #000;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #000;
+}
+
+.page-header li a {
+	list-style: none;
+	color: #000;
+ }
+
+ .page-header ul {
+ 	list-style: none;
+ }
+ 

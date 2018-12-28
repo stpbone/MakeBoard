@@ -13,7 +13,7 @@
 
     <ul>
    {% if user.is_authenticated %}
-     <li>Welcome, {{ user.get_username }}</li>
+     <li><strong>Welcome, {{ user.get_username }}</strong></li>
      <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>   
    {% else %}
      <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>   
@@ -23,7 +23,7 @@
     </div>
     <div class="content container">
         {% if user.is_authenticated %}
-    <button type="button" class="btn btn-success"><a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Add new project</a></button>
+    <button type="button" class="btn btn-success"><a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> Start new project</a></button>
 {% endif %}
         <div class="row">
             <div class="col-md-3"></div>
