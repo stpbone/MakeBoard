@@ -10,8 +10,11 @@ def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
+def pricing_page(request):
+    return render(request, 'blog/pricing_page.html')
+
 def home_page(request):
-    return render(request, 'blog/homepage.html')
+    return render(request, 'blog/home_page.html')
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
