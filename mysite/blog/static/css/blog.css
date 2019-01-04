@@ -30,3 +30,10 @@ a:hover {
  	list-style: none;
  }
 
+ .jumbotron {
+ 	background-image: url("https://image.freepik.com/free-vector/abstract-design-background_1048-6726.jpg");
+ 	background-position: cover;
+ 	height: 400px;
+ }
+
+

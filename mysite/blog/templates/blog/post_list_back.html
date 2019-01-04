@@ -1,0 +1,33 @@
+{% extends 'blog/header.html' %}
+
+{% block content %}
+
+<div>
+{% if user.is_authenticated %}
+
+    <br><button type="button" class="btn btn-success"><a href="{% url 'post_new' %}" class="top-menu">&#x2B; Start new project</a></button><br><br>
+
+{% endif %}
+</div>
+
+{% for post in posts %}
+
+
+ 
+
+<div class="card border-info mb-3" style="max-width: 18rem;">
+  <div class="card-header"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.category }} </a></div>
+  <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5><span class="badge badge-info">Primary</span>
+    <p class="card-text">{{ post.text }}.</p>
+      <button class="btn btn-primary"><a href="{% url 'post_detail' pk=post.pk %}">&#x270E;</a></button><button class="btn btn-danger"><a>&#x2718;</a></button>
+      <button type="button" class="btn btn-info btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>
+  </div>
+</div>
+
+
+
+
+        
+{% endfor %}
+{% endblock %}

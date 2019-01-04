@@ -9,7 +9,9 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    target_customer = models.TextField()
+    target_customer = models.TextField(max_length=200)
+    category = models.TextField()
+
 
     def publish(self):
         self.published_date = timezone.now()

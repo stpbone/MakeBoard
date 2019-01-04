@@ -1,19 +1,37 @@
 {% extends 'blog/header.html' %}
 
 {% block content %}
-    {% for post in posts %}
+<hr>
+<br>
+<div>
+{% if user.is_authenticated %}
+
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6"></div>	
+  <div class="col-sm-3"><a href="{% url 'post_new' %}" class="top-menu"><button type="button" class="btn btn-success">add new</button></a></div>
+   
 
 
-<div class="card border-info mb-3" style="max-width: 18rem;">
-  <div class="card-header"><a href="{% url 'post_detail' pk=post.pk %}">Category</a></div>
-  <div class="card-body">
-    <h5 class="card-title">{{ post.title }}</h5>
-    <p class="card-text">{{ post.text }}.</p>
-      <button class="btn btn-primary"><a href="{% url 'post_detail' pk=post.pk %}">&#9998; Edit project</a></button>
-  </div>
+{% endif %}
 </div>
 
+{% for post in posts %}
 
-        
-    {% endfor %}
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ post.category }} {{ post.title }}</h5>
+        <p class="card-text">{{ post.text }}</p>
+          <a href="{% url 'post_detail' pk=post.pk %}"><button class="btn btn-primary">&#x270E;</button></a><button class="btn btn-danger"><a>&#x2718;</a></button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
+
+{% endfor %}
+ 
 {% endblock %}

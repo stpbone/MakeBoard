@@ -4,6 +4,7 @@ from django.urls import include
 from django.contrib.auth import views as auth_view
 
 
+
 urlpatterns = [
 	path('', views.home_page, name='home_page'),
     path('projects', views.post_list, name='post_list'),
