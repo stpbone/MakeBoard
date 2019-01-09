@@ -21,19 +21,70 @@ a:hover {
 	color: #000;
 }
 
+.logout-button {
+
+}
+
+
+.help{
+  margin: 10px
+}
+
+
 .page-header li a {
 	list-style: none;
 	color: #000;
+	display: inline-block;;
  }
 
  .page-header ul {
  	list-style: none;
  }
 
- .jumbotron {
- 	background-image: url("https://image.freepik.com/free-vector/abstract-design-background_1048-6726.jpg");
- 	background-position: cover;
- 	height: 400px;
+ .trash {
+ 	margin: 10px;
  }
 
+ .rocket-img {
+ 	width: 30%;
+ } 
+
+ .icon {
+ 	font-size: 12px;
+ }
+
+ #features-image {
+ 	width: 20%;
+ 	height: 20%;
+ }
+
+  /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+
+
+
+
+ 
 

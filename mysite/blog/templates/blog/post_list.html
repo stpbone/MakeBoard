@@ -1,37 +1,40 @@
-{% extends 'blog/header.html' %}
+{% extends 'blog/header_logged_in.html' %}
 
 {% block content %}
-<hr>
-<br>
-<div>
+
+<div class="container">
 {% if user.is_authenticated %}
 
 <div class="row">
   <div class="col-sm-3"></div>
-  <div class="col-sm-6"></div>	
-  <div class="col-sm-3"><a href="{% url 'post_new' %}" class="top-menu"><button type="button" class="btn btn-success">add new</button></a></div>
-   
-
-
-{% endif %}
+  <div class="col-sm-6"></div>
+  <div class="col-sm-3"><a href="{% url 'post_new' %}" class="top-menu"><button type="button" class="btn btn-primary icon"><i class="fas fa-plus"></i> Start new project</button></a></div>
 </div>
+{% endif %}
 
 {% for post in posts %}
-
+<br>
 <div class="row">
   <div class="col-sm-3"></div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">{{ post.category }} {{ post.title }}</h5>
+        <h5 class="card-title">{{ post.title }}</h5>
         <p class="card-text">{{ post.text }}</p>
-          <a href="{% url 'post_detail' pk=post.pk %}"><button class="btn btn-primary">&#x270E;</button></a><button class="btn btn-danger"><a>&#x2718;</a></button>
+          <a href="{% url 'post_edit' pk=post.pk %}"><button class="btn btn-primary icon"><i class="fas fa-pencil-alt"></i> Edit</button></a><a><button class="btn btn-outline-danger trash icon"><i class="fas fa-trash-alt"></i> Delete</button></a><a href="{% url 'post_detail' pk=post.pk %}"><button class="btn btn-outline-info icon"><i class="fas fa-eye"></i> Overview</button></a>
+
+
+
+
       </div>
     </div>
   </div>
   <div class="col-sm-3"></div>
 </div>
 
+
+
 {% endfor %}
+
  
 {% endblock %}

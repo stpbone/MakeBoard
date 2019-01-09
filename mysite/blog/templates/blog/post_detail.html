@@ -1,18 +1,32 @@
-{% extends 'blog/header.html' %}
+{% extends 'blog/header_logged_in.html' %}
 
 {% block content %}
-<p><a href="/projects"><u><strong>&larr; all projects</strong></u></a> </p>
+<p><a href="/projects">&larr; all projects</a> </p>
     <div class="post">
-        {% if post.published_date %}
+        <!-- {% if post.published_date %}
             <div class="date">
                 {{ post.published_date }}
             </div>
-        {% endif %}
+        {% endif %} -->
         {% if user.is_authenticated %}
      <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 {% endif %}
-        <h2>Project name: {{ post.title }}</h2>
+<div class="row">
+    <div class="container-fluid text-center">
+        <h2>{{ post.title }}</h2>
         <p>Description: {{ post.text|linebreaksbr }}</p>
-        <p>Target customer: {{ post.target_customer}}
+        <p>Target customer: {{ post.target_customer}}</p>
     </div>
+</div>
+
+
+
+<div class="row">
+    <div class="container-fluid text-center">
+        <a href="{% url 'post_edit' pk=post.pk %}"><button class="btn btn-primary icon"><i class="fas fa-pencil-alt"></i> Edit</button></a><button class="btn btn-outline-danger trash icon"><i class="fas fa-trash-alt"></i> Delete</button></a>
+
+    </div>
+
+
+
 {% endblock %}
